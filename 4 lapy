@@ -1,0 +1,105 @@
+# Write a Python program to subtract five days from current date.
+
+
+from datetime import datetime, timedelta
+
+date = datetime.today() - timedelta(days=5)
+print(date.date())
+
+# Write a Python program to print yesterday, today, tomorrow.
+
+from datetime import datetime, timedelta
+
+today = datetime.today()
+print("Yesterday:", (today - timedelta(days=1)).date())
+print("Today:", today.date())
+print("Tomorrow:", (today + timedelta(days=1)).date())
+
+# Write a Python program to drop microseconds from datetime.
+
+from datetime import datetime
+
+now = datetime.now().replace(microsecond=0)
+print(now)
+
+# Write a Python program to calculate two date difference in seconds.
+
+from datetime import datetime
+
+date1 = datetime(2025, 2, 10, 12, 0, 0)
+date2 = datetime(2025, 3, 4, 14, 30, 0)
+difference = (date2 - date1).total_seconds()
+print(difference)
+
+# Create a generator that generates the squares of numbers up to some number N.
+
+def square_generator(N):
+    for i in range(N + 1):
+        yield i ** 2
+
+N = int(input("Enter N: "))
+print(list(square_generator(N)))
+
+# Write a program using generator to print the even numbers between 0 and n in comma separated form where n is input from console.
+
+def even_generator(n):
+    for i in range(0, n + 1, 2):
+        yield i
+
+n = int(input("Enter n: "))
+print(",".join(map(str, even_generator(n))))
+
+# Define a function with a generator which can iterate the numbers, which are divisible by 3 and 4, between a given range 0 and n.
+
+def divisible_by_3_and_4(n):
+    for i in range(n + 1):
+        if i % 3 == 0 and i % 4 == 0:
+            yield i
+
+n = int(input("Enter n: "))
+print(list(divisible_by_3_and_4(n)))
+
+# Implement a generator called squares to yield the square of all numbers from (a) to (b). Test it with a "for" loop and print each of the yielded values.
+
+def squares(a, b):
+    for i in range(a, b + 1):
+        yield i ** 2
+
+a, b = map(int, input("Enter a and b: ").split())
+for num in squares(a, b):
+    print(num)
+
+#Implement a generator that returns all numbers from (n) down to 0. 
+
+def countdown(n):
+    for i in range(n, -1, -1):
+        yield i
+
+n = int(input("Enter n: "))
+print(list(countdown(n)))
+
+# Write a Python program to convert degree to radian.
+
+import math
+
+degree = float(input())
+radian = degree * (math.pi / 180)
+print("Output radian:", round(radian, 6))
+
+# Write a Python program to calculate the area of a trapezoid.
+
+h, b1, b2 = float(input()), float(input()), float(input())
+print(0.5 * (b1 + b2) * h)
+
+# мWrite a Python program to calculate the area of regular polygon
+
+import math
+
+s, l = int(input())
+float(input())
+print(round((s * (l ** 2)) / (4 * math.tan(math.pi / s)), 2))
+
+# Write a Python program to calculate the area of a parallelogram.
+
+print(float(input()) * float(input()))
+
